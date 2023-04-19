@@ -1,0 +1,9 @@
+<h1 class="text-center">Discover All the Products</h1>
+<% @products.each do |product| %>
+              <div class="index-card-info">
+                <h5 class="index-card-title"><%= product.name.length < 16 ? product.name : product.name.first(16) + "..."%></h5>
+                <div class="index-card-text">
+                  <span><%= product.price %>€</span>
+                </div>
+              </div>
+          <% end %>
