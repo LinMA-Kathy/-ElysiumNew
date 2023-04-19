@@ -1,1 +1,47 @@
 // Specific CSS for your home-page
+.bannerHP {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.bannerHP h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bannerHP p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.btn-flat:hover {
+  background: #4D04C4;
+  color: white;
+  text-align: center;
+}
+
+.carousel-hp {
+  height: 50%;
+  margin: 40px;
+}
+
+.carousel-caption {
+  color:black;
+}
