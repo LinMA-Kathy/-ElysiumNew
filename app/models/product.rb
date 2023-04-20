@@ -3,7 +3,6 @@ class Product < ApplicationRecord
   has_many :transactions, dependent: :destroy
   validates :name, :price, :description, presence: true
 
-
   has_many_attached :photos
 
   def image_url
