@@ -4,9 +4,10 @@
     <h5 class="index-card-title"><%= product.name.length < 16 ? product.name : product.name.first(16) + "..."%></h5>
     <div class="index-card-text">
       <span><%= product.price %>€</span>
+      <%= link_to "Delete", product_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"black_link" %>
     </div>
     <% product.photos.each do |photo| %>
-      <%= image_tag photo, size: '150x150' %>
+      <%= cl_image_tag photo.key, size: '150x150' %>
     <% end %>
   </div>
 <% end %>
