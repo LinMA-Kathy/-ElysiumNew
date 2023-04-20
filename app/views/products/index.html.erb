@@ -1,12 +1,20 @@
-<h1 class="text-center">Discover All the Products</h1>
-<% @products.each do |product| %>
-  <div class="index-card-info">
-    <h5 class="index-card-title"><%= product.name.length < 16 ? product.name : product.name.first(16) + "..."%></h5>
-    <div class="index-card-text">
-      <span><%= product.price %>€</span>
-    </div>
-    <% product.photos.each do |photo| %>
-      <%= image_tag photo, size: '150x150' %>
+<main class="container">
+  <h1 class="my-4">Discover All the Products</h1>
+
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-md-4 col-lg-3 mb-4">
+        <div class="card h-100">
+          <%= link_to product_path(product) do %>
+            <%= cl_image_tag product.photos.first.key, alt:product.name, class: "card-img-top" %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text"><%= product.description %></p >
+            <p class="card-text"><%= product.price %> &euro;</p>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
-<% end %>
+</main>

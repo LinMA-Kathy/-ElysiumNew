@@ -11,6 +11,9 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
 
   def image_url(image_identifier)
     api_key = ENV['API_KEY']
