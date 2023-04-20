@@ -3,6 +3,5 @@ class Product < ApplicationRecord
   has_many :transactions, dependent: :destroy
   validates :name, :price, :description, presence: true
 
-  has_one_attached :photo
-
+  has_many_attached :photos
 end
