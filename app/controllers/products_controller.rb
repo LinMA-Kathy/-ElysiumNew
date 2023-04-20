@@ -2,18 +2,16 @@ class ProductsController < ApplicationController
   def index
     if params[:search]
       @products = product.search(params[:search]).order(created_at: :desc)
-      else
+    else
       @products = Product.all
     end
   end
 
-  def new
-    @product = Product.new
+  def show
+    @product = Product.find(params[:id])
   end
 
-
-  def image_url(image_identifier)
-    api_key = ENV['API_KEY']
-    "https://api.example.com/images/#{image_identifier}?api_key=#{api_key}"
+  def new
+    @product = Product.new
   end
 end
