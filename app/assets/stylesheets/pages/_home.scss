@@ -38,9 +38,14 @@
 }
 
 .carousel-hp {
-  height: 50%;
-  margin: 40px;
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  width: 200px;
+  height: 200px;
 }
+
 
 .carousel-caption {
   color:black;
@@ -52,5 +57,31 @@
   text-align: center;
   border: px solid #4A4A4A;
   padding: 8px 24px;
+}
 
+.card-categoryHP {
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-left: 40px;
+  margin-right: 40px;
+  width: 200px;
+  height: 200px;
+}
+
+
+.card-categoryHP h6{
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.card-categoryHP p{
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 10px;
 }
