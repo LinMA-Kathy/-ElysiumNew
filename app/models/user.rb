@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :transactions, dependent: :destroy
   validates :email, uniqueness: true
   has_one_attached :photo
+  validates :photo, presence: true
 end
