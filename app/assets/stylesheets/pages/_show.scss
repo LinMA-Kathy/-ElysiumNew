@@ -1,25 +1,5 @@
-  .grid-space {
-    padding: 0 10px;
-  }
-
-  .grid-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 10px;
-  }
-
-  .grid-separator {
-    margin-bottom: 10px;
-  }
-
-  .painting-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-
-  .content-container {
-    margin-top: 20px;
-  }
+.container-product {
+  margin-left: 10rem;
+  margin-right: 10rem;
+  display: flex;
+}
