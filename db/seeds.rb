@@ -9,20 +9,34 @@ require "open-uri"
 
 Product.destroy_all
 User.destroy_all
+puts "Cleaning Database!"
 
-user = User.create(email: "owner@gmail.com", password: "123456")
-user.save!
+puts "Creating users..."
+
+mimi = URI.open('https://res.cloudinary.com/dh2wbrqfq/image/upload/v1650283602/cpxlg3rjceanrvjudpak.jpg')
+user_mimi = User.new(email: "mimi@gmail.com", password: "123456")
+user_mimi.photo.attach(io: mimi, filename: 'mimi.png', content_type: 'image/png')
+user_mimi.save
+puts "Created #{user_mimi.email}"
+
+bob = URI.open('https://res.cloudinary.com/dh2wbrqfq/image/upload/v1650358877/v0w5kst9x4hjkiu1gi8j.jpg')
+user = User.new(email: "owner@gmail.com", password: "123456")
+user.photo.attach(io: bob, filename: 'bob.png', content_type: 'image/png')
+user.save
+puts "Created #{user.email}"
+
+puts "creating some products"
 
 file = URI.open("https://static.zara.net/photos///2023/V/0/1/p/7149/042/800/12/w/750/7149042800_2_3_1.jpg?ts=1681122141561")
 product1 = Product.new(name: "HIGH-WAIST SHORTS WITH PLEATS", description: "High-waist shorts with belt loops. Front pleats. Front zip fly and top button fastening.", price: 29)
 product1.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
-product1.user = user
+product1.user = user_mimi
 product1.save!
 
 file = URI.open("https://static.zara.net/photos///2023/V/0/1/p/2900/888/505/2/w/750/2900888505_2_3_1.jpg?ts=1678791736030")
 product2 = Product.new(name: "TAILORED WAISTCOAT", description: "V-neck waistcoat. False welt pockets on the front. Button fastening on the front.", price: 29)
 product2.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
-product2.user = user
+product2.user = user_mimi
 product2.save!
 
 file = URI.open("https://static.zara.net/photos///2023/V/0/1/p/9479/058/514/2/w/750/9479058514_6_1_1.jpg?ts=1675413130652")
@@ -84,3 +98,5 @@ product12 = Product.new(name: "BUTTONED WAISTCOAT", description: "Sleeveless V-n
 product12.photos.attach(io: file, filename: "nes.png", content_type: "image/png")
 product12.user = user
 product12.save!
+
+puts "12 products are created"
