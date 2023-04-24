@@ -1,0 +1,41 @@
+<h1>My cart and my selling products</h1>
+<h2>My cart</h2>
+  <table class="table table-responsive-xl table-hover">
+      <thead>
+        <tr>
+          <div class="dash-title-all">
+            <th scope="col" class="dash-title" style="width: 10vw;">Transaction created at</th>
+            <th scope="col" class="dash-title" style="width: 10vw;">Product name</th>
+            <th scope="col" class="dash-title" style="width: 8vw;">Product Price</th>
+            <th scope="col" class="dash-title" style="width: 8vw;">Check how it looks on me</th>
+            <th scope="col" class="dash-title" style="width: 8vw;">Quantity</th>
+            <th scope="col" class="dash-title" style="width: 8vw;">Delete my transaction</th>
+          </div>
+        </tr>
+      </thead>
+      <tbody>
+          <% @transactions.each do |transaction| %>
+              <tr>
+                <td class="resa-info resa-date"><%= transaction.created_at.strftime('%a, %e %b %Y') %></th>
+                <td class="resa-info"><%= link_to transaction.product.name, product_path(transaction.product) %></td>
+                <td class="resa-info"><%= transaction.product.price%>€</td>
+                <td class="resa-info"><%= cl_image_tag transaction.product.photos.first.key, crop: :fill, class: "resa-image", width: 100, height: 100, resize: "fit"%></td>
+                <td class="resa-info">
+                    <%= simple_form_for transaction do |f| %>
+                    <%= f.input :quantity, label:false, collection: [1, 2, 3, 4, 5] %>
+                    <%= submit_tag "Update" %>
+                  <% end %>
+                </td>
+                <td class="resa-info">
+                  <div class="d-flex" style="justify-content: space-evenly;">
+                      <%= link_to 'Delete', transaction_path(transaction), data: { turbo_method: :delete, turbo_confirm: "The item will be deleted from your cart. Are you sure to cancel? "}, style:'padding-left: 20px; padding-right: 20px', class: "btn btn-outline-danger"%>
+                  </div>
+                </td>
+                <%= render 'shared/modalresa', transaction: transaction %>
+              </tr>
+              <% end %>
+      </tbody>
+    </table>
+
+    <h5><%= "Total amount to pay: #{@total_amount}" %> €</h5>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateresamodal" style="padding-left: 20px; padding-right: 20px">Pay</button>
