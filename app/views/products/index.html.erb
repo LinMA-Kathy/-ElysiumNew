@@ -12,10 +12,11 @@
             <h5 class="card-title"><%= product.name %></h5>
             <p class="card-text"><%= product.description %></p >
             <p class="card-text"><%= product.price %> &euro;</p>
-            <p class="card-text"><%= link_to "Delete", product_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"black_link" %></p>     
+            <p class="card-text"><%= link_to "Delete", product_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"black_link" %></p>
           </div>
         </div>
       </div>
     <% end %>
+
   </div>
 </main>
