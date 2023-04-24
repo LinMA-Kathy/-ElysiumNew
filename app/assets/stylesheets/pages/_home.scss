@@ -34,27 +34,27 @@
 
 .banner-btn:hover {
   background:darkgray;
-  color: white;
+  color: rgb(250, 250, 250);
   text-align: center;
 }
 
 .carousel-hp {
-  margin-top:10px;
-  margin-bottom:10px;
-  margin-left: 40px;
-  margin-right: 40px;
-  width: 200px;
-  height: 200px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: center;
 }
-
 
 .carousel-caption {
   color:black;
 }
 
+
 .btn-light{
   font-size: 10px;
-  color: grey;
+  color: rgb(116, 114, 114);
   text-align: center;
   border: px solid #4A4A4A;
   padding: 8px 24px;
@@ -63,28 +63,27 @@
 .card-categoryHP {
   margin-top:10px;
   margin-bottom:10px;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
   width: 200px;
   height: 200px;
+  background-size: cover;
+  background-position: center;
 }
 
+.label-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.card-categoryHP h6{
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 20px;
+.bold-heading {
   font-weight: bold;
-  text-align: center;
 }
 
-
-.card-categoryHP p{
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 10px;
+.carousel-centre {
+  width: 100%;
+  text-align: center;
 }
 
 .banner-btn {
