@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :transactions, only: [:create]
   end
   resources :transactions, only: [:destroy, :edit, :update, :show]
+  get "dashboard", to: "dashboard#dashboard"
 end
