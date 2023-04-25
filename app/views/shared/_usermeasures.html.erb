@@ -1,0 +1,41 @@
+ <div class="modal fade" id="measures" tabindex="-1" aria-labelledby="measuresLabel" aria-hidden="true">
+
+   <div class="modal-dialog">
+
+     <div class="modal-content">
+
+       <div class="modal-header">
+
+         <h5 class="modal-title" id="measuresLabel" >Measurement</h5>
+
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+       </div>
+
+       <div class="modal-body">
+
+         <div class="row mb-3">
+
+           <%= simple_form_for(users_path) do |f| %>
+
+             <%= f.input :height, placeholder: 'ex: 165cm' %>
+
+             <%= f.input :chest, placeholder: 'ex: 36C'%>
+
+             <%= f.input :waist,placeholder: 'ex: 70cm' %>
+
+             <%= f.input :hip, placeholder: 'ex: 95cm' %>
+
+             <%= submit_tag "Save" %>
+
+           <% end %>
+
+         </div>
+
+       </div>
+
+     </div>
+
+   </div>
+
+ </div>
