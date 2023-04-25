@@ -13,12 +13,12 @@
             <thead>
               <tr>
                 <div class="dash-title-all">
-                  <th scope="col" class="dash-title" style="width: 10vw;">Transaction created at</th>
+                  <th scope="col" class="dash-title" style="width: 10vw;">Item added on</th>
                   <th scope="col" class="dash-title" style="width: 10vw;">Product name</th>
-                  <th scope="col" class="dash-title" style="width: 8vw;">Product Price</th>
-                  <th scope="col" class="dash-title" style="width: 8vw;">Check how it looks on me</th>
-                  <th scope="col" class="dash-title" style="width: 8vw;">Quantity</th>
-                  <th scope="col" class="dash-title" style="width: 8vw;">Delete my transaction</th>
+                  <th scope="col" class="dash-title" style="width: 8vw;">Product price/unit</th>
+                  <th scope="col" class="dash-title" style="width: 8vw;">Check how it fits me</th>
+                  <th scope="col" class="dash-title" style="width: 8vw;">Select the quantity</th>
+                  <th scope="col" class="dash-title" style="width: 8vw;">Cancel the transaction</th>
                 </div>
               </tr>
             </thead>
@@ -49,7 +49,7 @@
             </tbody>
           </table>
 
-          <h5><%= "Total amount to pay: #{@total_amount}" %> €</h5>
+          <h5><%= "Total (#{@total_quantity} articles): #{@total_amount}" %> €</h5>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateresamodal" style="padding-left: 20px; padding-right: 20px">Pay</button>
     </div>
 
@@ -61,8 +61,6 @@
               <th scope="col" class="dash-title" style="width: 10vw;">Created at</th>
               <th scope="col" class="dash-title" style="width: 10vw;">Product name</th>
               <th scope="col" class="dash-title" style="width: 10vw;">Product description</th>
-              <th scope="col" class="dash-title" style="width: 10vw;">Owner name</th>
-              <th scope="col" class="dash-title" style="width: 10vw;">Owner contact</th>
               <th scope="col" class="dash-title" style="width: 10vw;">Suggested selling price</th>
               <th scope="col" class="dash-title" style="width: 10vw;">Manage my item to sell</th>
             </tr>
@@ -74,8 +72,6 @@
                 <td class="resa-info resa-date"><%= product.created_at.strftime('%a, %e %b %Y') %></th>
                 <td class="resa-info"><%= product.name%></td>
                 <td class="resa-info"><%= product.description%></td>
-                <td class="resa-info"><%= product.user.first_name%></td>
-                <td class="resa-info"><%= product.user.email%></td>
                 <td class="resa-info"><%= product.price%>€</td>
                 <td class="resa-info">
                   <div class="d-flex" style="justify-content: space-evenly;">
