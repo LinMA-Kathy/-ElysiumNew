@@ -29,6 +29,7 @@
                       <td class="resa-info"><%= link_to transaction.product.name, product_path(transaction.product) %></td>
                       <td class="resa-info"><%= transaction.product.price%>€</td>
                       <td class="resa-info"><%= cl_image_tag transaction.product.photos.first.key, data: { bs_toggle: 'modal', bs_target: "#updatemeasuremodal" } , crop: :fill, class: "resa-image", width: 100, height: 100, resize: "fit"%></td>
+
                 '<%= render 'shared/updatemeasures' %>
 
                       <td class="resa-info">
@@ -92,3 +93,5 @@
 </div>
 
 <%= console %>
+
+<%= render 'shared/footer' %>
