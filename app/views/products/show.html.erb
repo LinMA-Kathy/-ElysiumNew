@@ -39,6 +39,7 @@
       <%= link_to "Back To All Products", products_path, style:"padding-left: 20px; padding-right: 20px", class: "btn btn-secondary" %>
       <br>
       <br>
+
       <%= simple_form_for [@product, @transaction] do |f| %>
         <%= submit_tag "Purchase now" %>
       <% end %>
@@ -46,7 +47,6 @@
     </div>
   </div>
 </div>
-
 
 <div class="label-container">
   <label for="exampleFormControlTextarea1" class="col-form-label col-form-label-lg" style="font-weight: bold;">You May Like</label>
