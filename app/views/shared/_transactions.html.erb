@@ -29,7 +29,7 @@
                       <td class="resa-info"><%= link_to transaction.product.name, product_path(transaction.product) %></td>
                       <td class="resa-info"><%= transaction.product.price%>€</td>
                       <td class="resa-info"><%= cl_image_tag transaction.product.photos.first.key, data: { bs_toggle: 'modal', bs_target: "#updatemeasuremodal" } , crop: :fill, class: "resa-image", width: 100, height: 100, resize: "fit"%></td>
-      
+
       <div class="modal fade" id="updatemeasuremodal" tabindex="-1" aria-labelledby="measuresLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-      </div>             
+      </div>
                       <td class="resa-info">
                           <%= simple_form_for transaction do |f| %>
                           <%= f.input :quantity, label:false, collection: [1, 2, 3, 4, 5] %>
@@ -117,3 +117,5 @@
 </div>
 
 <%= console %>
+
+<%= render 'shared/footer' %>
