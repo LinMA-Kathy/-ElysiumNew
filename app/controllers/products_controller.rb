@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
+    @vintage = @products.where(category: 'vintage')
+    @new = @products.where(category: 'new')
   end
 
   def new
