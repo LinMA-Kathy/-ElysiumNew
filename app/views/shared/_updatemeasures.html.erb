@@ -1,0 +1,51 @@
+      <div class="modal fade" id="updatemeasuremodal" tabindex="-1" aria-labelledby="measuresLabel" aria-hidden="true">
+
+        <div class="modal-dialog">
+
+          <div class="modal-content">
+
+            <div class="modal-header">
+
+              <h5 class="modal-title" id="measuresLabel" >Update Measurement</h5>
+
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+            </div>
+
+            <div class="modal-body">
+
+
+
+             <div class="d-flex justify-content-center">
+
+                <img class="form-image" src="https://media.istockphoto.com/id/1349960077/fr/photo/v%C3%AAtements-en-denim-%C3%A0-bascule.jpg?s=612x612&w=0&k=20&c=ATDIYlImqW21B3hV-veTOGtSKzvvovOrvY8a5ojStBA="  alt="..." >
+
+             </div>
+
+
+
+              <div class="row mb-3">
+
+                <%= simple_form_for(users_path) do |f| %>
+
+                  <%= f.input :height, placeholder: 'ex: 165cm' %>
+
+                  <%= f.input :chest, placeholder: 'ex: 36C'%>
+
+                  <%= f.input :waist,placeholder: 'ex: 70cm' %>
+
+                  <%= f.input :hip, placeholder: 'ex: 95cm' %>
+
+                  <%= submit_tag "Save" %>
+
+                <% end %>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>

@@ -1,93 +1,67 @@
-<br>
-<br>
-<div class="container-product p-4">
+<div class="container-product row">
 
-  <div class="left-part">
-    <%= cl_image_tag @product.photos.first.key, crop: :fill, class: "product-image" %>
-  </div>
+   <div class="left-part col-6">
+     <%= cl_image_tag @product.photos.first.key, crop: :fill, class: "product-image" %>
+   </div>
 
-  <div class="right-part">
-    <div class="meta-info">
-      <h1><%= @product.name %></h1>
+   <div class="right-part col-6">
+     <div class="meta-info">
+       <h1><%= @product.name %></h1>
 
-      <div class="product-price-infos">
-        <h2><%= @product.price %>€ </h2>
-      </div>
-      <br>
-      <br>
-      <div class="product-infos">
-        <span><i class="fa-solid fa-info"></i> - <strong>Product Information</strong></span>
-        <p><%= @product.description %></p>
-      </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="buttons">
-      <div class="d-flex align-items-center">
-            <%= simple_form_for [@product, @transaction] do |f| %>
-
-  <div class="buttons">
-    <div class="d-flex align-items-center">
-      <button type="submit" class="btn btn-light me-3" style="font-size: 18px; background-color: #f2f2f2;">
-        <i class="fas fa-cart-plus me-2"></i>Purchase Now
-      </button>
-      <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModal" style="font-size: 18px; background-color: #f2f2f2;">
-        <i class="fas fa-eye me-2"></i>See How It Looks on You
-      </button>
+       <div class="product-price-infos">
+         <h2><%= @product.price %>€ </h2>
+       </div>
+       <br>
+       <br>
+       <div class="product-infos">
+         <span><i class="fa-solid fa-info"></i> - <strong>Product Information</strong></span>
+         <p><%= @product.description %></p>
+       </div>
      </div>
-    </div>
-  <% end %>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <div class="buttons">
+       <div class="d-flex align-items-center">
+         <%= simple_form_for [@product, @transaction] do |f| %>
+           <div class="buttons">
+             <div class="d-flex align-items-center">
+               <button type="submit" class="btn btn-light me-3" style="font-size: 18px; background-color: #f2f2f2;">
+                 <i class="fas fa-cart-plus me-2"></i>Purchase Now
+               </button>
+             </div>
+           </div>
+         <% end %>
+         <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#measures" style="font-size: 18px; background-color: #f2f2f2;">
+           <i class="fas fa-eye me-2"></i>See How It Looks on You new
+         </button>
+       </div>
+       <br>
+       <br>
+       <%= link_to "Back To All Products", products_path, style:"font-size: 18px; background-color: #f2f2f2; padding-left: 20px; padding-right: 20px", class: "btn btn-light" %>
+      <br>
+      <br>
 
-      </div>
-      <br>
-      <br>
-      <%= link_to "Back To All Products", products_path, style:"padding-left: 20px; padding-right: 20px", class: "btn btn-secondary" %>
-      <br>
-      <br>
 
-      <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#measures" style="font-size: 20px;">See How It looks on You</button>
-      <div class="modal fade" id="measures" tabindex="-1" aria-labelledby="measuresLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="measuresLabel" >Measurement</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <div class="row mb-3">
-                <%= simple_form_for(users_path) do |f| %>
-                  <%= f.input :height, placeholder: 'ex: 165cm' %>
-                  <%= f.input :chest, placeholder: 'ex: 36C'%>
-                  <%= f.input :waist,placeholder: 'ex: 70cm' %>
-                  <%= f.input :hip, placeholder: 'ex: 95cm' %>
-                   <%= submit_tag "Save" %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-    <div>
   </div>
-
-<div class="label-container">
-  <label for="exampleFormControlTextarea1" class="col-form-label col-form-label-lg" style="font-weight: bold;">You May Like</label>
-
+        <%= render 'shared/usermeasures' %>
 </div>
 
-<div class="d-flex justify-content-center">
- <div class="card-categoryHP" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1353385456/fr/photo/beaut%C3%A9-mode-femme-en-chapeau-rond-noir-et-imperm%C3%A9able-en-cuir-pr%C3%A8s-de-l%C3%A9tang-du-lac-portrait.jpg?s=612x612&w=0&k=20&c=ccxoARhYgZULrjlW1RQ7z-zftDNHhOojy-E3P41Kyz0=">
- </div>
-  <div class="card-categoryHP" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1129815594/fr/photo/trop-beau-pour-%C3%AAtre-r%C3%A9el-pleine-longueur-de-belle-femme-blonde-souriant-et-gestes-tout-en-se.jpg?s=612x612&w=0&k=20&c=o-LaT6rA4jiwPKw0P0c7r2dQHEfwUtpxT7MxLw5Eiqk=">
- </div>
-  <div class="card-categoryHP" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1367180724/fr/photo/jeunes-femmes-%C3%A9l%C3%A9gantes-en-tenues-pastel-debout-ensemble-concept-de-mode-photo-darchives.jpg?s=612x612&w=0&k=20&c=s_f-lDhnw_VPz5HGv4erUMmqz-aDxtlBvF0V6d0DRZo=">
- </div>
- <div class="card-categoryHP" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1390691695/fr/photo/belle-jeune-femme-mince-dans-une-%C3%A9l%C3%A9gante-robe-en-soie-de-couleur-orange-%C3%A0-lair-magnifique.jpg?s=612x612&w=0&k=20&c=X_n-cG5DrXoQRhFA6ZPx0NfmoEmk3DCvvJ5Q5vnoU8s=">
- </div>
- <div class="card-categoryHP" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1475001673/fr/photo/%C3%A9motions-humaines-impersonnelles-une-fille-%C3%A9l%C3%A9gante-en-manteau-gris-et-collants-rouge-vif-se.jpg?s=612x612&w=0&k=20&c=yH13JgN7BGH8DXEiYixnqvyeKttp6Boiesxt6ZVkCko=">
- </div>
-</div>
+
+  <div class="label-container">
+    <label for="exampleFormControlTextarea1" class="col-form-label col-form-label-lg" style="font-weight: bold;">You May Like</label>
+  </div>
+    <div class="d-flex justify-content-center">
+      <div class="card-categoryHP" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1353385456/fr/photo/beaut%C3%A9-mode-femme-en-chapeau-rond-noir-et-imperm%C3%A9able-en-cuir-pr%C3%A8s-de-l%C3%A9tang-du-lac-portrait.jpg?s=612x612&w=0&k=20&c=ccxoARhYgZULrjlW1RQ7z-zftDNHhOojy-E3P41Kyz0=">
+      </div>
+      <div class="card-categoryHP" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1129815594/fr/photo/trop-beau-pour-%C3%AAtre-r%C3%A9el-pleine-longueur-de-belle-femme-blonde-souriant-et-gestes-tout-en-se.jpg?s=612x612&w=0&k=20&c=o-LaT6rA4jiwPKw0P0c7r2dQHEfwUtpxT7MxLw5Eiqk=">
+      </div>
+      <div class="card-categoryHP" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1367180724/fr/photo/jeunes-femmes-%C3%A9l%C3%A9gantes-en-tenues-pastel-debout-ensemble-concept-de-mode-photo-darchives.jpg?s=612x612&w=0&k=20&c=s_f-lDhnw_VPz5HGv4erUMmqz-aDxtlBvF0V6d0DRZo=">
+      </div>
+      <div class="card-categoryHP" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1390691695/fr/photo/belle-jeune-femme-mince-dans-une-%C3%A9l%C3%A9gante-robe-en-soie-de-couleur-orange-%C3%A0-lair-magnifique.jpg?s=612x612&w=0&k=20&c=X_n-cG5DrXoQRhFA6ZPx0NfmoEmk3DCvvJ5Q5vnoU8s=">
+      </div>
+      <div class="card-categoryHP" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/id/1475001673/fr/photo/%C3%A9motions-humaines-impersonnelles-une-fille-%C3%A9l%C3%A9gante-en-manteau-gris-et-collants-rouge-vif-se.jpg?s=612x612&w=0&k=20&c=yH13JgN7BGH8DXEiYixnqvyeKttp6Boiesxt6ZVkCko=">
+      </div>
+    </div>
