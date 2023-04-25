@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
     else
       @products = Product.all
     end
+    @vintage = @products.where(category: 'vintage')
+    @new = @products.where(category: 'new')
   end
 
   def new
@@ -33,13 +35,13 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.update(product_params)
-    redirect_to product_path(@product)
+    redirect_to dashboard_path
   end
 
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to products_path(@product)
+    redirect_to dashboard_path
   end
 
   def image_url(image_identifier)

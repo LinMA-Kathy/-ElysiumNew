@@ -157,3 +157,17 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #636265;
+  transition: background 0.3s ease;
+  text-align: center;
+
+}
+.btn-flat:hover {
+  background: #b1abbb;
+  color: white;
+  text-align: center;
+}
