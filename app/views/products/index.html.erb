@@ -1,8 +1,10 @@
 <main class="container">
-  <h1 class="my-4">Discover All the Products</h1>
+  <div id="centered-content">
+    <h1 class="my-4">DISCOVER NEW ITEMS </h1>
+  </div>
 
   <div class="row">
-    <% @products.each do |product| %>
+    <% @new.each do |product| %>
       <div class="col-md-4 col-lg-3 mb-4">
         <div class="card h-100">
           <%= link_to product_path(product) do %>
@@ -10,9 +12,35 @@
           <% end %>
           <div class="card-body">
             <h5 class="card-title"><%= product.name %></h5>
-            <p class="card-text"><%= product.description %></p >
+            <br>
             <p class="card-text"><%= product.price %> &euro;</p>
-            <p class="card-text"><%= link_to "Delete", product_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"black_link" %></p>
+            <p class="card-text"><%= link_to "Add to Cart", product_path(product), class:"btn btn-index" %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</main>
+
+<main class="container">
+  <div id="centered-content">
+    <h1 class="my-4">DISCOVER SECOND HAND ITEMS </h1>
+  </div>
+
+  <div class="row">
+    <% @vintage.each do |product| %>
+      <div class="col-md-4 col-lg-3 mb-4">
+        <div class="card h-100">
+          <%= link_to product_path(product) do %>
+            <%= cl_image_tag product.photos.first.key, alt:product.name, class: "card-img-top" %>
+          <% end %>
+          <div class="card-body">
+            <h5 class="card-title"><%= product.name %></h5>
+            <br>
+            <p class="card-text"><%= product.price %> &euro;</p>
+            <p class="card-text"><%= link_to "Add to Cart", product_path(product), class:"btn btn-index" %></p>
+
           </div>
         </div>
       </div>
