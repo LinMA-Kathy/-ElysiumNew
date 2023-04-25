@@ -1,9 +1,8 @@
 class ProductsController < ApplicationController
   def index
-    if params[:search]
-      @products = product.search(params[:search]).order(created_at: :desc)
-    else
-      @products = Product.all
+    @products = Product.all
+    if params[:query].present?
+      @products = @products.where("name ILIKE ?", "%#{params[:query]}%")
     end
     @vintage = @products.where(category: 'vintage')
     @new = @products.where(category: 'new')

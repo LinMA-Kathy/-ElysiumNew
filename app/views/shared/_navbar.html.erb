@@ -4,7 +4,13 @@
       <img src="https://mma.prnewswire.com/media/660552/Elysium_Health_Logo.jpg?p=facebook" />
     </a>
 <div class="search__container">
-    <input class="search__input" type="text" placeholder="Search">
+     <%= form_with url: products_path, method: :get, class: "d-flex form-width" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control search__input",
+            placeholder: "SEARCH FOR AN ITEM"
+        %>
+    <% end %>
 </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
@@ -16,9 +22,9 @@
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/users/edit">Log In / Sign Up</a>
-            <a class="dropdown-item" href="/users/edit">Add measurements</a>
-            <a class="dropdown-item" href="/dashboard">My cart</a>
-            <a class="dropdown-item" href="/products/new">Sell a product</a>
+            <a class="dropdown-item" href="/users/edit">Add Measurements</a>
+            <a class="dropdown-item" href="/dashboard">My Cart</a>
+            <a class="dropdown-item" href="/products/new">Sell a Product</a>
             <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
           </div>
         </li>

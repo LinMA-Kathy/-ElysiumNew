@@ -34,7 +34,7 @@
   }
 
   &__input {
-      width: 60%;
+      width: 100%;
       padding: 12px 24px;
 
       background-color: transparent;
@@ -72,4 +72,16 @@
           background-position: 100% center;
       }
   }
+}
+
+.form-width {
+  width: 50%;
+}
+
+.fa-plus {
+  color:black;
+}
+
+.fa-shopping-cart {
+  color: black;
 }
