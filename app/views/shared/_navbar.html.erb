@@ -3,27 +3,22 @@
     <a class="navbar-brand" href="/">
       <img src="https://mma.prnewswire.com/media/660552/Elysium_Health_Logo.jpg?p=facebook" />
     </a>
-    <div class="search">
-      <form action="#">
-        <input type="text" placeholder=" Search Courses" name="search">
-        <button>
-          <i class="fa fa-search" style="font-size: 18px;"></i>
-        </button>
-      </form>
-    </div>
+<div class="search__container">
+    <input class="search__input" type="text" placeholder="Search">
+</div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Add a product</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Add your measures</a>
+          <a href="/products/new"><i class="fa fa-plus"></i></a>
+          <a href="/dashboard"><i class="fa fa-shopping-cart"></i></a>
         </li>
         <li class="nav-item dropdown">
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Log In/Sign Up</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="/users/edit">Log In / Sign Up</a>
+            <a class="dropdown-item" href="/users/edit">Add measurements</a>
+            <a class="dropdown-item" href="/dashboard">My cart</a>
+            <a class="dropdown-item" href="/products/new">Sell a product</a>
             <a class="dropdown-item" data-turbo-method="delete" href="#">Log out</a>
           </div>
         </li>
