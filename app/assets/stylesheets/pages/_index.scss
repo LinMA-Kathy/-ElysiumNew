@@ -1,6 +1,12 @@
 // Import page-specific CSS files here.
 @import "home";
 
+#centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .cards-index {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -105,4 +111,21 @@
   .cards-index {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+.btn-index {
+  color: white;
+  width:100%;
+  background: rgb(79, 65, 65);
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.btn-index:hover {
+  background: darkgray;
+  color: white;
+}
+
+.card-title {
+  height:20%;
 }
