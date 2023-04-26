@@ -1,12 +1,12 @@
 <div class="container container-form">
   <br>
-  <h1 class="text-center" style="color: black">Create a New Product</h1>
+  <h1 class="text-center" style="color: black">Sell an Item</h1>
   <br>
   <div>
     <div class="container col-8">
       <%= simple_form_for @product, remote: true do |f| %>
         <div class="form-double">
-          <%= f.input :name, wrapper_html:{class: "input-form"}, placeholder: 'ex: Boston Fern' %>
+          <%= f.input :name, wrapper_html:{class: "input-form"}, placeholder: 'ex: Skinny Jeans' %>
         </div>
 
         <div class="form-double">
@@ -14,7 +14,7 @@
           <%= f.input :price, wrapper_html:{class: "input-form"}, placeholder: '25' %>
         </div>
         <div class="form-double text">
-          <%= f.input :description, wrapper_html:{class: "input-form"}, as: :text, placeholder: 'A feathery product with a 100% green effect.' %>
+          <%= f.input :description, wrapper_html:{class: "input-form"}, as: :text, placeholder: 'Skinny Jeans from Zara - Worn Once' %>
         </div>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <div class="form-button">
