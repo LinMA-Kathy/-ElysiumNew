@@ -6,7 +6,7 @@
 
             <div class="modal-header">
 
-              <h5 class="modal-title" id="measuresLabel" >Update Measurement</h5>
+              <h5 class="modal-title" id="measuresLabel">MODIFY YOUR SIZE (OPTIONAL) </h5>
 
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
@@ -15,18 +15,19 @@
             <div class="modal-body">
 
 
-
+            <% @transactions.each do |transaction| %>
              <div class="d-flex justify-content-center">
+              <% if transaction.product.photos.any? %>
 
-                <img class="form-image" src="https://media.istockphoto.com/id/1349960077/fr/photo/v%C3%AAtements-en-denim-%C3%A0-bascule.jpg?s=612x612&w=0&k=20&c=ATDIYlImqW21B3hV-veTOGtSKzvvovOrvY8a5ojStBA="  alt="..." >
-
+                <img class="form-image" <%= cl_image_tag transaction.product.photos.first.key %> >
+                <% else %>
+                <% end %>
              </div>
-
-
+            <% end %>
 
               <div class="row mb-3">
 
-                <%= simple_form_for(users_path) do |f| %>
+                <%= simple_form_for(current_user, data: {turbo: false}) do |f| %>
 
                   <%= f.input :height, placeholder: 'ex: 165cm' %>
 
@@ -36,10 +37,8 @@
 
                   <%= f.input :hip, placeholder: 'ex: 95cm' %>
 
-                  <%= submit_tag "Save" %>
-
+                  <%= f.submit "Update", name: "update" %>
                 <% end %>
-
               </div>
 
             </div>
