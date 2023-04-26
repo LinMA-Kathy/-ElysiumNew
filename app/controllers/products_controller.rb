@@ -45,6 +45,12 @@ class ProductsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def available
+    @product = Product.find(params[:id])
+    @product.available = false
+    redirect_to dashboard_path
+  end
+
   def image_url(image_identifier)
     api_key = ENV['API_KEY']
     "https://api.example.com/images/#{image_identifier}?api_key=#{api_key}"

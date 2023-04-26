@@ -35,6 +35,13 @@ class TransactionsController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def complete
+    @transaction = Transaction.find(params[:id])
+    @transaction.completed = true
+    @transaction.save
+    redirect_to dashboard_path
+  end
+
   private
 
   def transaction_params
