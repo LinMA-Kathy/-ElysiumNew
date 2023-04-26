@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+   skip_before_action :authenticate_user!, only: [ :index ]
   def index
     @products = Product.all
     if params[:query].present?
@@ -35,7 +36,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.update(product_params)
-    redirect_to dashboard_path
+    redirect_to dashboard_path(tab: 'product')
   end
 
   def destroy
