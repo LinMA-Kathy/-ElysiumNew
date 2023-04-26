@@ -69,7 +69,7 @@ label {
   font-size: 24px;
 }
 
-.btn {
+.btn_payment {
   background-color: #04AA6D;
   color: white;
   padding: 12px;
@@ -120,22 +120,22 @@ span.price {
           <div class="col-50">
             <h3>Billing Address</h3>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <input type="text" id="fname" name="firstname" placeholder="Crysanne Yiannopoulos">
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <input type="text" id="email" name="email" placeholder="crysanneyiannopoulos@example.com">
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <input type="text" id="adr" name="address" placeholder="2 Vlla Michel-Ange">
             <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York">
+            <input type="text" id="city" name="city" placeholder="Paris">
 
             <div class="row">
               <div class="col-50">
-                <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY">
+                <label for="state">Country</label>
+                <input type="text" id="state" name="state" placeholder="France">
               </div>
               <div class="col-50">
-                <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001">
+                <label for="zip">Postal Code</label>
+                <input type="text" id="zip" name="zip" placeholder="75015">
               </div>
             </div>
           </div>
@@ -150,7 +150,7 @@ span.price {
               <i class="fa fa-cc-discover" style="color:orange;"></i>
             </div>
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+            <input type="text" id="cname" name="cardname" placeholder="Crysanne Yiannopoulos">
             <label for="ccnum">Credit card number</label>
             <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
             <label for="expmonth">Exp Month</label>
@@ -158,7 +158,7 @@ span.price {
             <div class="row">
               <div class="col-50">
                 <label for="expyear">Exp Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder="2018">
+                <input type="text" id="expyear" name="expyear" placeholder="2024">
               </div>
               <div class="col-50">
                 <label for="cvv">CVV</label>
@@ -171,24 +171,11 @@ span.price {
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <input type="submit" value="Continue to checkout" class="btn_payment">
       </form>
     </div>
   </div>
-  <div class="col-25">
-    <div class="container">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-      <p><a href="#">HIGH-WAIST SHORTS WITH PLEATS</a> <span class="price">29€</span></p>
-      <p><a href="#">TAILORED WAISTCOAT</a> <span class="price">5€</span></p>
-      <p><a href="#">KNIT TOP WITH STRAPS</a> <span class="price">8€</span></p>
-      <p><a href="#">RIBBED CROP TOP</a> <span class="price">2€</span></p>
-      <hr>
-      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
-    </div>
-  </div>
 </div>
-
-<%= render 'shared/footer' %>
-
 </body>
 </html>
+<%= render 'shared/footer' %>
