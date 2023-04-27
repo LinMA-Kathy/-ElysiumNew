@@ -16,14 +16,15 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @transaction = Transaction.new
+    @user = current_user
   end
 
   def create
     @product = Product.new(product_params)
     @product.user = current_user
-    @product.category = 'vintage'
+    @product.category = 'Vintage'
     if @product.save
-      redirect_to products_path(@product)
+      redirect_to products_path, notice: "Confirmation: your item is now available on Elysium", status: :see_other
     else
       render :new
     end
