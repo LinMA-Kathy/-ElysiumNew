@@ -29,6 +29,8 @@
      <br>
      <br>
      <br>
+
+
      <% if @product.transactions.exists? %>
         <h3>The item already exists in the cart</h3>
         <a href="/dashboard">Go to my cart to check out</a>
@@ -49,6 +51,7 @@
               </button>
             </div>
         <% end %>
+
        <br>
        <br>
        <%= link_to "Back To All Products", products_path, style:"font-size: 18px; background-color: #f2f2f2; padding-left: 20px; padding-right: 20px", class: "btn btn-light" %>
