@@ -17,30 +17,41 @@
          <span><i class="fa-solid fa-info"></i> - <strong>Product Information</strong></span>
          <p><%= @product.description %></p>
        </div>
+       <br>
+       <br>
+       <div class="product-infos">
+       <span><i class="fa-solid fa-info"></i> - <strong> New Item / Vintage Item</strong></span>
+         <p><%= @product.category %></p>
+       </div>
      </div>
      <br>
      <br>
      <br>
      <br>
      <br>
-     <div class="buttons">
-       <div class="d-flex align-items-center">
-         <%= simple_form_for [@product, @transaction] do |f| %>
-           <div class="buttons">
-             <div class="d-flex align-items-center">
-               <button type="submit" class="btn btn-light me-3" style="font-size: 18px; background-color: #f2f2f2;">
-                 <i class="fas fa-cart-plus me-2"></i>Purchase Now
-               </button>
-             </div>
-           </div>
-         <% end %>
-         <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#measures" style="font-size: 18px; background-color: #f2f2f2;">
-           <i class="fas fa-eye me-2"></i>See How It Looks on You new
-         </button>
 
 
+     <% if @product.transactions.exists? %>
+        <h3>The item already exists in the cart</h3>
+        <a href="/dashboard">Go to my cart to check out</a>
+        <% else %>
+          <div class="buttons">
+            <div class="d-flex align-items-center">
+              <%= simple_form_for [@product, @transaction] do |f| %>
+                <div class="buttons">
+                  <div class="d-flex align-items-center">
+                    <button type="submit" class="btn btn-light me-3" style="font-size: 18px; background-color: #f2f2f2;">
+                      <i class="fas fa-cart-plus me-2"></i>Purchase Now
+                    </button>
+                  </div>
+                </div>
+              <% end %>
+              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#measures" style="font-size: 18px; background-color: #f2f2f2;">
+                <i class="fas fa-eye me-2"></i>See How It Looks on You new
+              </button>
+            </div>
+        <% end %>
 
-       </div>
        <br>
        <br>
        <%= link_to "Back To All Products", products_path, style:"font-size: 18px; background-color: #f2f2f2; padding-left: 20px; padding-right: 20px", class: "btn btn-light" %>

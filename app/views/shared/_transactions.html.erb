@@ -1,14 +1,14 @@
 <div class="container dash-container">
   <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My cart</button>
+    <button class="nav-link <%= params[:tab] == 'product' ? '' : 'active' %>" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My cart</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">What I intend to sell</button>
+    <button class="nav-link <%= params[:tab] == 'product' ? 'active' : '' %>" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">What I intend to sell</button>
   </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade <%= params[:tab] == 'product' ? '' : 'show active' %>" id="home" role="tabpanel" aria-labelledby="home-tab">
           <table class="table table-responsive-xl table-hover">
             <thead>
               <tr>
@@ -53,7 +53,8 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#updateresamodal" style="padding-left: 20px; padding-right: 20px">Pay</button>
     </div>
 
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade <%= params[:tab] == 'product' ? 'show active' : '' %>" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
         <table class="table table-responsive-xl table-hover">
           <thead>
             <tr>
@@ -62,25 +63,27 @@
               <th scope="col" class="dash-title" style="width: 10vw;">Product name</th>
               <th scope="col" class="dash-title" style="width: 10vw;">Product description</th>
               <th scope="col" class="dash-title" style="width: 10vw;">Suggested selling price</th>
+              <th scope="col" class="dash-title" style="width: 10vw;">Status</th>
               <th scope="col" class="dash-title" style="width: 10vw;">Manage my item to sell</th>
             </tr>
           </thead>
           <tbody>
             <% @products.each do |product| %>
-              <tr>
-                <td class="resa-info"><%= cl_image_tag product.photos.first.key, crop: :fill, class: "resa-image", width: 100, height: 100, resize: "fit"%></td>
-                <td class="resa-info resa-date"><%= product.created_at.strftime('%a, %e %b %Y') %></th>
-                <td class="resa-info"><%= product.name%></td>
-                <td class="resa-info"><%= product.description%></td>
-                <td class="resa-info"><%= product.price%>€</td>
-                <td class="resa-info">
-                  <div class="d-flex" style="justify-content: space-evenly;">
-                      <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal" style="padding-left: 20px; padding-right: 20px">Update my product</button>
-                      <%= link_to 'Delete', product_path(product), data: { turbo_method: :delete, turbo_confirm: "Your product will be deleted. Are you sure to continue?"}, style:'padding-left: 20px; padding-right: 20px', class: "btn btn-outline-danger"%>
-                  </div>
-                </td>
-                <%= render 'shared/modalproductupdate', product: product %>
-              </tr>
+                <tr>
+                  <td class="resa-info"><%= cl_image_tag product.photos.first.key, crop: :fill, class: "resa-image", width: 100, height: 100, resize: "fit"%></td>
+                  <td class="resa-info resa-date"><%= product.created_at.strftime('%a, %e %b %Y') %></th>
+                  <td class="resa-info"><%= product.name%></td>
+                  <td class="resa-info"><%= product.description%></td>
+                  <td class="resa-info"><%= product.price%>€</td>
+                  <td class="resa-info"><%= product.transactions.empty? ? "available" : "sold out" %></td>
+                  <td class="resa-info">
+                    <div class="d-flex" style="justify-content: space-evenly;">
+                        <button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal" style="padding-left: 20px; padding-right: 20px">Update my product</button>
+                        <%= link_to 'Delete', product_path(product), data: { turbo_method: :delete, turbo_confirm: "Your product will be deleted. Are you sure to continue?"}, style:'padding-left: 20px; padding-right: 20px', class: "btn btn-outline-danger"%>
+                    </div>
+                  </td>
+                  <%= render 'shared/modalproductupdate', product: product %>
+                </tr>
               <% end %>
           </tbody>
         </table>
