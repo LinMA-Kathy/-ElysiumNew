@@ -72,7 +72,7 @@
                 <tr>
                   <td class="resa-info"><%= cl_image_tag product.photos.first.key, crop: :fill, class: "resa-image", width: 100, height: 100, resize: "fit"%></td>
                   <td class="resa-info resa-date"><%= product.created_at.strftime('%a, %e %b %Y') %></th>
-                  <td class="resa-info"><%= product.name%></td>
+                  <td class="resa-info"><%= link_to product.name, product_path(product)%></td>
                   <td class="resa-info"><%= product.description%></td>
                   <td class="resa-info"><%= product.price%>€</td>
                   <td class="resa-info"><%= product.transactions.empty? ? "available" : "sold out" %></td>
@@ -88,9 +88,8 @@
           </tbody>
         </table>
         </div>
+        <%= link_to "Discover All Products", products_path, style:"font-size: 18px; background-color: #f2f2f2; padding-left: 20px; padding-right: 20px", class: "btn btn-light" %>
   </div>
 </div>
-
-<%= console %>
 
 <%= render 'shared/footer' %>

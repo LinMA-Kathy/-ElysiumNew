@@ -8,14 +8,13 @@
         <div class="form-double">
           <%= f.input :name, wrapper_html:{class: "input-form"}, placeholder: 'ex: Skinny Jeans' %>
         </div>
-
         <div class="form-double">
-
           <%= f.input :price, wrapper_html:{class: "input-form"}, placeholder: '25' %>
         </div>
         <div class="form-double text">
           <%= f.input :description, wrapper_html:{class: "input-form"}, as: :text, placeholder: 'Skinny Jeans from Zara - Worn Once' %>
         </div>
+        <%= f.input :category, collection: ["Vintage", "New"], include_blank: false, selected: "Vintage" %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <div class="form-button">
           <%= f.submit "Confirm", class: "btn btn-success", style: "padding-left: 20px; padding-right: 20px"%> <%= link_to "back", products_path, class: "btn btn-light", style: "padding-left: 20px; padding-right: 20px" %>
