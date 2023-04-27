@@ -29,3 +29,13 @@
     max-height: 500px;
     object-fit: cover;
   }
+
+  /* Remove default list-style-type for ul and ol */
+  ul, ol {
+    list-style-type: none;
+  }
+
+  /* Apply list-style-type to li elements within the list */
+  li {
+    list-style-type: none;
+  }

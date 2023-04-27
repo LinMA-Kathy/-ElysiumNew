@@ -1,0 +1,21 @@
+<div class="modal fade" id="measures" tabindex="-1" aria-labelledby="measuresLabel" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="measuresLabel" >See how it looks on me</h5>
+         <br>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body">
+         <%= cl_image_tag @product.photos.first.key, crop: :fill, class: "product-image" %>
+          <ul>
+            <li>Based on my measurements</li>
+            <li>Height: <%= current_user.height %> </li>
+            <li>Chest: <%= current_user.chest %></li>
+            <li>Waist: <%= current_user.waist %></li>
+            <li>Hip: <%= current_user.hip %></li>
+          </ul>
+       </div>
+     </div>
+   </div>
+ </div>
