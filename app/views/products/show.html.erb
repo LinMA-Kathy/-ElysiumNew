@@ -28,8 +28,8 @@
      <br>
      <br>
      <% if @product.transactions.where(user: current_user).any? %>
-        <h3>The item already exists in the cart</h3>
-        <a href="/dashboard">Go to my cart to check out</a>
+        <p>The item already exists in the cart</p>
+        <%= link_to 'Go to my cart to check out', dashboard_path, data: {turbo: false}, class:"btn btn-light me-3", style:"font-size: 20px; background-color: #FDF4E0" %>
         <% else %>
           <div class="buttons">
             <div class="d-flex align-items-center">
@@ -58,11 +58,8 @@
 
        <br>
       <br>
-
   </div>
 </div>
-
-
   <div class="label-container">
     <label for="exampleFormControlTextarea1" class="col-form-label col-form-label-lg" style="font-weight: bold;">You May Like</label>
   </div>
