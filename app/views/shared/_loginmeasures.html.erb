@@ -1,41 +1,25 @@
  <div class="modal fade" id="measurements" tabindex="-1" aria-labelledby="measurementsLabel" aria-hidden="true">
-
    <div class="modal-dialog">
-
      <div class="modal-content">
-
        <div class="modal-header">
-
-         <h5 class="modal-title" id="measurementsLabel" >Measurement</h5>
-
+         <h5 class="modal-title" id="measurementsLabel" >My measurements</h5>
          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
        </div>
-
+        <p class="measurement-info" style="font-size: 15px;">To check the exact fit of an item on your body, please ensure to add your measurements. Your personal data is strictly managed and protected </p>
        <div class="modal-body">
-
          <div class="row mb-3">
-
            <%= simple_form_for(current_user,data: {turbo: false}) do |f| %>
-
              <%= f.input :height, placeholder: 'ex: 165cm' %>
-
              <%= f.input :chest, placeholder: 'ex: 36C'%>
-
              <%= f.input :waist,placeholder: 'ex: 70cm' %>
-
              <%= f.input :hip, placeholder: 'ex: 95cm' %>
-
-             <%= submit_tag "Save" %>
-
+             <%= submit_tag "Save my measurements" %>
            <% end %>
-
          </div>
+         <a href="URL"; style="font-size: 15px"; class="measurement-info">personal data privacy</a>
 
        </div>
-
      </div>
-
    </div>
-
  </div>

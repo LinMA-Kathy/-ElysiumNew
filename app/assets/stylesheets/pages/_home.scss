@@ -1,9 +1,41 @@
 // Specific CSS for your home-page
+body {
+  font-family: $body-font;
+}
+
+h1 {
+  font-family: $headers-font;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  text-align: center;
+}
+
+h6 {
+  font-size: 25px;
+}
+
+.measurement-info {
+margin: 0 auto 20px;
+padding: 5px 15px;
+}
+
+.link-container p {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.link-container {
+  text-align: center;
+}
+
 .bannerHP {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-
 
 }
 
@@ -11,13 +43,13 @@
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 50px;
   font-weight: bold;
   text-align: center;
 }
 
 .bannerHP p {
-  font-size: 20px;
+  font-size: 25px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -28,7 +60,7 @@
   color: black;
   padding: 8px 24px;
   border-radius: 4px;
-  font-size: 10px;
+  font-size: 35px;
   background: lightgray;
   transition: background 0.3s ease;
   text-align: center;
@@ -55,7 +87,7 @@
 
 
 .btn-light{
-  font-size: 10px;
+  font-size: 20px;
   color: rgb(116, 114, 114);
   text-align: center;
   border: px solid #4A4A4A;
@@ -172,4 +204,8 @@
   background: #b1abbb;
   color: white;
   text-align: center;
+}
+
+a.black_link.btn.btn-flat {
+  font-size: 25px;
 }

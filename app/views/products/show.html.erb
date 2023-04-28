@@ -36,19 +36,19 @@
               <%= simple_form_for [@product, @transaction] do |f| %>
                 <div class="buttons">
                   <div class="d-flex align-items-center">
-                    <button type="submit" class="btn btn-light me-3" style="font-size: 18px; background-color: #f2f2f2;">
+                    <button type="submit" class="btn btn-light me-3" style="font-size: 20px; background-color: #FFE7D7;">
                       <i class="fas fa-cart-plus me-2"></i>Purchase Now
                     </button>
                   </div>
                 </div>
               <% end %>
                <% if current_user.height.nil? %>
-               <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#measures" style="font-size: 18px; background-color: #f2f2f2;">
+               <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#measures" style="font-size: 20px; background-color: #FFE7D7;">
                 <i class="fas fa-eye me-2"></i>Add my measurements
               </button>
               <%= render 'shared/usermeasures' %>
               <% else %>
-              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#measures" style="font-size: 18px; background-color: #f2f2f2;">
+              <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#measures" style="font-size: 20px; background-color: #FFE7D7;">
                 <i class="fas fa-eye me-2"></i>See How It Looks
               </button>
               <%= render 'shared/howitlooks' %>
@@ -57,9 +57,6 @@
         <% end %>
 
        <br>
-       <br>
-       <%= link_to "Discover All Products", products_path, style:"font-size: 18px; background-color: #f2f2f2; padding-left: 20px; padding-right: 20px", class: "btn btn-light" %>
-      <br>
       <br>
 
   </div>
