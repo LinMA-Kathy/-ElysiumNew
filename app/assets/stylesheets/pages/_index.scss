@@ -1,6 +1,27 @@
 // Import page-specific CSS files here.
 @import "home";
 
+body {
+  font-family: $body-font;
+}
+
+h1 {
+  font-family: $headers-font;
+  color:#78746C;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  text-align: center;
+  color: #0E0000;
+}
+
+h6 {
+  font-size: 25px;
+}
+
 #centered-content {
   display: flex;
   justify-content: center;
@@ -115,8 +136,8 @@
 
 .btn-index {
   color: white;
-  width:100%;
-  background: rgb(79, 65, 65);
+  width: 100%;
+  background: #78746C;
   transition: background 0.3s ease;
   text-align: center;
 }
@@ -128,4 +149,5 @@
 
 .card-title {
   height:20%;
+  text-align: center;
 }

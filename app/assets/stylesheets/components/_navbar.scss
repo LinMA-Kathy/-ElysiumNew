@@ -11,10 +11,13 @@
 }
 
 .search__container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
 }
+
+
 
 .navbar-nav .nav-item {
   margin-right: 10px;

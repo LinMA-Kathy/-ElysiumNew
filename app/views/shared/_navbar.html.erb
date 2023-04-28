@@ -1,17 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid d-flex align-items-center justify-content-between">
     <a class="navbar-brand" href="/">
-      <img src="https://mma.prnewswire.com/media/660552/Elysium_Health_Logo.jpg?p=facebook" />
+      <%= image_tag asset_url('elysiumlogo.png') %>
     </a>
-<div class="search__container">
-     <%= form_with url: products_path, method: :get, class: "d-flex form-width" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control search__input",
-            placeholder: "SEARCH FOR AN ITEM"
-        %>
-    <% end %>
-</div>
+    <div class="search__container">
+      <%= form_with url: products_path, method: :get, class: "d-flex form-width" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control search__input",
+              placeholder: "Search for an item"
+          %>
+      <% end %>
+    </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
@@ -19,6 +19,10 @@
         </li>
 
           <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Discover all products", products_path, class: "nav-link" %>
+        </li>
+
         <li class="nav-item active">
           <a href="/products/new"><i class="fa fa-plus"></i></a>
           <a href="/dashboard"><i class="fa fa-shopping-cart"></i></a>
@@ -26,9 +30,9 @@
         <li class="nav-item dropdown">
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= cl_image_path current_user.photo.key %>" />
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-          <button type="button" class=" btn btn-light" data-bs-toggle="modal" data-bs-target="#measurements" style="font-size: 18px; background-color: #f2f2f2;">Add Measurements</button>
-            <a class="dropdown-item" href="/dashboard">My Cart</a>
-            <a class="dropdown-item" href="/products/new">Sell a Product</a>
+            <button type="button" class=" btn btn-light" data-bs-toggle="modal" data-bs-target="#measurements" style="font-size: 15px; background-color: #f2f2f2;">Add/update my measurements</button>
+            <a class="dropdown-item" href="/products/new">Sell an item</a>
+            <a class="dropdown-item" href="/dashboard">My dashboard</a>
             <a class="dropdown-item" data-turbo-method="delete" href="<%= destroy_user_session_path %>">Log out</a>
           </div>
         </li>

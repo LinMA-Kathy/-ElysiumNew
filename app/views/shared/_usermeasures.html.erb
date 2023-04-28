@@ -3,9 +3,8 @@
      <div class="modal-content">
        <div class="modal-header">
          <h5 class="modal-title" id="measuresLabel" >Add Measurements</h5>
-         <br>
        </div>
-       <p class="measurement-info" style="font-size: 10px;">To check the exact fit of an item on your body, please ensure to add your measurements. Your personal data is strictly managed and protected </p>
+       <p class="measurement-info" style="font-size: 15px;">To check the exact fit of an item on your body, please ensure to add your measurements. Your personal data is strictly managed and protected </p>
        <div class="modal-body">
          <div class="row mb-3">
            <%= simple_form_for(current_user,data: {turbo: false}) do |f| %>
@@ -13,10 +12,10 @@
              <%= f.input :chest, placeholder: 'ex: 36C'%>
              <%= f.input :waist,placeholder: 'ex: 70cm' %>
              <%= f.input :hip, placeholder: 'ex: 95cm' %>
-              <a href="URL"; style="font-size: 10px">personal data privacy</a>
-             <%= submit_tag "Save your measurements" %>
+             <%= submit_tag "Save my measurements" %>
            <% end %>
          </div>
+         <a href="URL"; style="font-size: 15px"; class="measurement-info">personal data privacy</a>
        </div>
      </div>
    </div>

@@ -1,3 +1,28 @@
+ body {
+   font-family: $body-font;
+ }
+
+ h1 {
+   font-family: $headers-font;
+   color: #0E0000;
+ }
+
+ p {
+   margin-top: 0;
+   margin-bottom: 1rem;
+   font-size: 20px;
+   text-align: center;
+  color: #78746C;
+ }
+
+ .product-infos {
+  text-align: left;
+ }
+
+ .product-infos p{
+   text-align: left;
+ }
+
  .container-product {
     display: flex;
     flex-wrap: wrap;
