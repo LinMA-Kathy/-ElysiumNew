@@ -1,5 +1,4 @@
 .footer {
-  background: #F4F4F4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,6 +6,11 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
 }
+.lighter {
+  font-size: 15px;
+  color: #78746C;
+}
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -16,7 +20,7 @@
   color: black;
   opacity: 0.15;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   padding: 0px 10px;
 }
 .footer-links a:hover {
@@ -24,4 +28,8 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.wrapper-container {
+  min-height: calc(100vh - 210px);
 }

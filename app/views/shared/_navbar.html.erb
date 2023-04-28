@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid d-flex align-items-center justify-content-between">
     <a class="navbar-brand" href="/">
-      <%= image_tag asset_url('elysiumlogo.png') %>
+      <%= image_tag 'elysiumlogo.png' %>
     </a>
     <div class="search__container">
       <%= form_with url: products_path, method: :get, class: "d-flex form-width" do %>
@@ -30,7 +30,7 @@
         <li class="nav-item dropdown">
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="<%= cl_image_path current_user.photo.key %>" />
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <button type="button" class=" btn btn-light" data-bs-toggle="modal" data-bs-target="#measurements" style="font-size: 15px; background-color: #f2f2f2;">Add/update my measurements</button>
+            <span class="dropdown-item" data-bs-toggle="modal" data-bs-target="#measurements" style="cursor:pointer;">Add/update my measurements</span>
             <a class="dropdown-item" href="/products/new">Sell an item</a>
             <a class="dropdown-item" href="/dashboard">My dashboard</a>
             <a class="dropdown-item" data-turbo-method="delete" href="<%= destroy_user_session_path %>">Log out</a>
