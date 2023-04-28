@@ -25,7 +25,7 @@ class ProductsController < ApplicationController
     @product.category = 'Vintage'
     if @product.save
 
-      redirect_to products_path, notice: "Confirmation: your item is now available on Elysium", status: :see_other
+      redirect_to dashboard_path, notice: "Confirmation: your item is now available on Elysium", status: :see_other
 
     else
       render :new
